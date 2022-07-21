@@ -4,8 +4,17 @@ import styles from './Detail.style'
 import useFetch from '../../hooks/useFetch'
 import Loading from '../../components/Loading'
 import Error from '../../components/Error'
+import FavoriteButton from '../../components/FavoriteButton'
 
-const Detail = ({ route }) => {
+const Detail = ({ navigation, route }) => {
+    useEffect(() => {
+        navigation.setOptions({
+            headerRight: () => (
+                <FavoriteButton idMeal={route.params.idMeal} type='detail' />
+            )
+        })
+    }, [])
+
     const idMeal = route.params.idMeal
     const URL = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i='
     const { data, loading, error } = useFetch(URL + idMeal)

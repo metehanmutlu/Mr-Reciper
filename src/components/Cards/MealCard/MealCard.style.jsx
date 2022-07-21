@@ -15,7 +15,6 @@ export default StyleSheet.create({
         position: 'absolute',
         bottom: 0,
         right: 0,
-        backgroundColor: 'black',
         width: '100%',
         // maxHeight: 55,
         backgroundColor: '#00000095',

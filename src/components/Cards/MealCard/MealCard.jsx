@@ -1,11 +1,13 @@
 import { View, Text, TouchableWithoutFeedback, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import styles from './MealCard.style'
+import FavoriteButton from '../../FavoriteButton'
 
 const MealCard = ({ meal, onPress }) => {
     return (
         <TouchableWithoutFeedback onPress={onPress}>
             <View style={styles.container}>
+                <FavoriteButton idMeal={meal.idMeal} type='card' />
                 <Image
                     source={{ uri: meal.strMealThumb }}
                     style={styles.image}
@@ -22,4 +24,4 @@ const MealCard = ({ meal, onPress }) => {
     )
 }
 
-export default MealCard
+export default React.memo(MealCard)
