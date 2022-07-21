@@ -16,7 +16,7 @@ const AppStack = () => {
                     color: '#ffa500'
                 },
                 headerTintColor: '#ffa500',
-                navigationBarColor: 'transparent',
+                // navigationBarColor: '#ffa600b9',
             }}
         >
             <Stack.Screen
